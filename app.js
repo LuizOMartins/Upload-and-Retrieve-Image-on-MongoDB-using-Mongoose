@@ -7,11 +7,9 @@ var fs = require('fs');
 var path = require('path'); 
 require('dotenv').config();
 
-// Connecting to the database  
 
-// console.log("URL");
-// console.log(process.env.MONGO_URL);
-mongoose.connect('MONGO_URL = mongodb://localhost:27017/image', 
+
+mongoose.connect('mongodb://localhost:'+process.env.PORT+'/'+process.env.DB, 
 { useNewUrlParser: true, useUnifiedTopology: true }, err => { 
 console.log('connected') 
 }); 
