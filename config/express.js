@@ -1,32 +1,31 @@
 var express = require('express') ;
 var app = express() ;
 var bodyParser = require('body-parser'); 
-var mongoose = require('mongoose') ;
-  
 var fs = require('fs'); 
 var path = require('path'); 
 require('dotenv').config();
-
-
-
-mongoose.connect('mongodb://localhost:'+process.env.PORT+'/'+process.env.DB, 
-{ useNewUrlParser: true, useUnifiedTopology: true }, err => { 
-console.log('connected') 
-}); 
-
+// var consign = require('consign');
+// app.use(express.static('./public'));
  
-app.use(bodyParser.urlencoded({ extended: false })) 
-app.use(bodyParser.json()) 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
   
 // Set EJS as templating engine  
 app.set("view engine", "ejs"); 
 
 
-var multer = require('multer'); 
+// consign({cwd: 'app'})
+//     .include('models')
+//     .then('api')
+//     .then('routes')
+//     .into(app);
+
+
+var multer = require('multer');
   
 var storage = multer.diskStorage({ 
-    destination: (req, file, cb) => { 
-        cb(null, 'uploads') 
+    destination: (req, file, cb) => {
+        cb(null, 'C:/Users/luyz_/Documents/GitHub/IMAGE/uploads/'); 
     }, 
     filename: (req, file, cb) => { 
         cb(null, file.fieldname + '-' + Date.now()) 
@@ -35,14 +34,14 @@ var storage = multer.diskStorage({
   
 var upload = multer({ storage: storage }); 
 
-var imgModel = require('./model'); 
-
+ var imgModel = require('../app/models/image'); 
 
 // Retriving the image 
 app.get('/', (req, res) => { 
     imgModel.find({}, (err, items) => { 
+        console.log('buscando');
         if (err) { 
-            console.log(err); 
+            console.log('ERROR GET',err); 
         } 
         else { 
             res.render('app', { items: items }); 
@@ -52,17 +51,19 @@ app.get('/', (req, res) => {
 
 
 // Uploading the image 
-app.post('/', upload.single('image'), (req, res, next) => { 
+app.post('/', upload.single('image'), (req, res, next) => {
   
+    console.log('POST');
     var obj = { 
         name: req.body.name, 
         desc: req.body.desc, 
         img: { 
-            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)), 
+            data: fs.readFileSync(path.join('C:/Users/luyz_/Documents/GitHub/IMAGE/uploads/' + req.file.filename)),    
             contentType: 'image/png'
         } 
     } 
     imgModel.create(obj, (err, item) => { 
+        console.log('criando imagems');
         if (err) { 
             console.log(err); 
         } 
@@ -71,12 +72,7 @@ app.post('/', upload.single('image'), (req, res, next) => {
             res.redirect('/'); 
         } 
     }); 
+    console.log('sucesso');
 }); 
 
-
-app.listen('3000' , err => { 
-    if (err) 
-        throw err 
-    console.log('Server started') 
-});
-
+module.exports = app;
