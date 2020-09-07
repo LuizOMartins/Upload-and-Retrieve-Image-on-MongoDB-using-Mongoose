@@ -22,16 +22,7 @@ app.set("view engine", "ejs");
 
 
 var multer = require('multer');
-  
-var storage = multer.diskStorage({ 
-    destination: (req, file, cb) => {
-        cb(null, 'C:/Users/luyz_/Documents/GitHub/IMAGE/uploads/'); 
-    }, 
-    filename: (req, file, cb) => { 
-        cb(null, file.fieldname + '-' + Date.now()) 
-    } 
-}); 
-  
+var storage =  require('./multerconfig');
 var upload = multer({ storage: storage }); 
 
  var imgModel = require('../app/models/image'); 
