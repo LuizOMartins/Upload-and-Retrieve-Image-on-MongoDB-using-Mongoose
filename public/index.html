@@ -1,10 +1,16 @@
 <!DOCTYPE html> 
-<html lang="pt-br"> 
+<html lang="pt-br" ng-app="image">
   
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Image Uploading</title> 
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/angular-resource.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/image-controller.js"></script>
 </head> 
   
 <body> 
@@ -36,7 +42,7 @@
   
     <hr> 
   
-    <h1>Uplaoded Images</h1> 
+    <!-- <h1>Uplaoded Images</h1> 
     <div> 
         <% items.forEach(function(image) { %> 
         <div> 
@@ -50,7 +56,10 @@
             </div> 
         </div> 
         <% }) %> 
-    </div> 
+    </div>  -->
+
+
+    <button ng-click="get()">REQ</button>
 </body> 
   
 </html> 

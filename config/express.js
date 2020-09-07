@@ -5,13 +5,13 @@ var fs = require('fs');
 var path = require('path'); 
 require('dotenv').config();
 // var consign = require('consign');
-// app.use(express.static('./public'));
+app.use(express.static('./public'));
  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
   
 // Set EJS as templating engine  
-app.set("view engine", "ejs"); 
+// app.set("view engine", "ejs"); 
 
 
 // consign({cwd: 'app'})
@@ -28,7 +28,7 @@ var upload = multer({ storage: storage });
  var imgModel = require('../app/models/image'); 
 
 // Retriving the image 
-app.get('/', (req, res) => { 
+app.get('/image', (req, res) => { 
     imgModel.find({}, (err, items) => { 
         console.log('buscando');
         if (err) { 
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
 
 // Uploading the image 
-app.post('/', upload.single('image'), (req, res, next) => {
+app.post('/image', upload.single('image'), (req, res, next) => {
   
     console.log('POST');
     var obj = { 
