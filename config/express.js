@@ -4,11 +4,19 @@ var bodyParser = require('body-parser');
 var fs = require('fs'); 
 var path = require('path'); 
 require('dotenv').config();
+var cors = require('cors');
 // var consign = require('consign');
 app.use(express.static('./public'));
  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors()); //Essa linha aqui
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200
+  };
+
+  app.use(cors(corsOptions));
   
 // Set EJS as templating engine  
 // app.set("view engine", "ejs"); 
@@ -30,12 +38,16 @@ var upload = multer({ storage: storage });
 // Retriving the image 
 app.get('/image', (req, res) => { 
     imgModel.find({}, (err, items) => { 
-        console.log('buscando');
+        console.log('BUSCANDO...');
         if (err) { 
+            res.sendStatus(500);
             console.log('ERROR GET',err); 
         } 
         else { 
-            res.render('app', { items: items }); 
+            // res.render('app', { items: items }); 
+            console.log("200 OK");
+            res.json(items);
+
         } 
     }); 
 }); 
