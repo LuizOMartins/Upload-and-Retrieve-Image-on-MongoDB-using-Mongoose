@@ -41,25 +41,17 @@
     </div> 
   
     <hr> 
-  
-    <!-- <h1>Uplaoded Images</h1> 
-    <div> 
-        <% items.forEach(function(image) { %> 
-        <div> 
-            <div> 
-                <img src="data:image/<%=image.img.contentType%>;base64, 
-                     <%=image.img.data.toString('base64')%>"> 
-                <div> 
-                    <h5><%= image.name %></h5> 
-                    <p><%= image.desc %></p> 
-                </div> 
-            </div> 
-        </div> 
-        <% }) %> 
-    </div>  -->
-
-
     <button ng-click="getImages()">REQ</button>
+    <hr> 
+    <div ng-repeat="image in imagens" >
+        <!-- <img data-ng-src="data:image/png;base64,{{image.data}}" title="{{image.name}}"> -->
+        <img src="data:image/png;base64,{{image.img.data}}"/>
+        <span>{{image.name}}</span>
+    </div>
+  
+
+
+  
 </body> 
   
 </html> 
