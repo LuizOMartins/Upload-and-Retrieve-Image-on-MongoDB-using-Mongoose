@@ -43,14 +43,21 @@
     <hr> 
     <button ng-click="getImages()">REQ</button>
     <hr>
-    <div ng-repeat="image in imagens" >
-        <!-- <img data-ng-src="data:image/png;base64,{{image.data}}" title="{{image.name}}"> -->
-        <img src="{{image.img}}"/>
-        <img src="{{image.img.data}}"/>
-        <img src="data:image/png;base64,{{image.img}}"/>
-        <img src="data:image/png;base64,{{image.img.data}}"/>
-        <img ng-src="data:image/png;base64,{{image.img.data}}"/>
-        <span>{{image.name}}</span>
+    <div ng-repeat="foto in imagens" >
+
+        <img src="{{foto.img.data}}"/>
+        <img src="data:image/png;base64,{{foto.img.data.data}}"/>
+        <img src="data:image/png;base64,{{foto.img.data.data}}"/>
+        <img ng-src="data:image/png;base64"/>
+        <hr>
+        <img ng-src="{{foto.img.data.data.toString('base64')}}"/>
+        <span>{{foto.name}}</span>
+        <hr>
+        <div>{{foto}}</div>
+        <hr>
+
+        <div>{{foto.img.data.data}}</div>
+        <hr>
     </div>
   
 
