@@ -49,7 +49,7 @@ app.get('/image', (req, res) => {
             res.json(items);
 
         } 
-    }); 
+    }).limit(1); 
 }); 
 
 

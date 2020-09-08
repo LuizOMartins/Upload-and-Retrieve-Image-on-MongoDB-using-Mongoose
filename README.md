@@ -13,3 +13,8 @@ npm install ejs --save
 
 ___________________________________________________________
 
+ref: https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
+
+___________________________________________________________
+
+ imagem é armazenada em formato binário, portanto, precisamos convertê-la para o formato base64 que, no momento da renderização, é convertido na imagem.
