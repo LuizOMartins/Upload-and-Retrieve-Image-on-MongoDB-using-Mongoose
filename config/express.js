@@ -61,6 +61,8 @@ app.post('/image', upload.single('image'), (req, res, next) => {
     console.log("IMG", req.body.img );
     console.log("TYPE", req.body.img );
 
+    console.log(typeof(req.file.filename));
+    console.log(req.file.filename);
     var obj = { 
         name: req.body.nome, 
         desc: req.body.desc, 
@@ -68,6 +70,11 @@ app.post('/image', upload.single('image'), (req, res, next) => {
             data: fs.readFileSync(path.join('C:/Users/luyz_/Documents/GitHub/IMAGE/uploads/' + req.file.filename)),    
             contentType: 'image/png'
         } 
+        // img: { 
+        //     data: fs.readFileSync(path.join('C:/Users/luyz_/Documents/GitHub/IMAGE/uploads/' + req.img.filename)),    
+        //     contentType: 'image/png'
+        // } 
+
     } 
     imgModel.create(obj, (err, item) => { 
         console.log('criando imagems');
