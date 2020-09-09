@@ -1,5 +1,5 @@
-var express = require('express') ;
-var app = express() ;
+var express = require('express');
+var app = express();
 var bodyParser = require('body-parser'); 
 var fs = require('fs'); 
 var path = require('path'); 
@@ -21,7 +21,7 @@ var multer = require('multer');
 var storage =  require('./multerconfig');
 var upload = multer({ storage: storage }); 
 
- var imgModel = require('../app/models/image'); 
+var imgModel = require('../app/models/image'); 
 
 // Retriving the image 
 app.get('/image', (req, res) => { 
