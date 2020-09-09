@@ -3,21 +3,12 @@ var app = express() ;
 var bodyParser = require('body-parser'); 
 var fs = require('fs'); 
 var path = require('path'); 
-require('dotenv').config();
-var cors = require('cors');
-// var consign = require('consign');
+
 app.use(express.static('./public'));
  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors()); //Essa linha aqui
-var corsOptions = {
-    origin: 'http://localhost:3000',
-    optionsSuccessStatus: 200
-  };
 
-  app.use(cors(corsOptions));
-  
 
 // consign({cwd: 'app'})
 //     .include('models')
