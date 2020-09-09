@@ -1,20 +1,29 @@
 # Upload and Retrieve Image on MongoDB using Mongoose
 
+## Dependências:
 
-Dependencia:
-
-
-Dotenv é um módulo de dependência zero que carrega variáveis ​​de ambiente de um arquivo .env em process.env.
+* Dotenv é um módulo de dependência zero que carrega variáveis ​​de ambiente de um arquivo .env em process.env.
 npm install dotenv --save
 
-EJS ou Embedded Javascript Templating é um mecanismo de modelagem usado pelo Node.js. O mecanismo de modelo ajuda a criar um modelo HTML com o mínimo de código.
-npm install ejs --save
+* Mean STACK:  MongoDB, Express, AngularJS e Node.
+
+* Multer:
+
+### Informações:
+
++ Imagem é armazenada em formato binário, portanto, precisamos convertê-la para o formato base64 que, no momento da renderização, isso no Controller (imageController).
 
 
-___________________________________________________________
+#### Referência: https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
 
-ref: https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
+Para fazer:
 
-___________________________________________________________
+- Separar as rotas:
+-- cadastrar imagem #
+-- pagina inicial   #
 
- imagem é armazenada em formato binário, portanto, precisamos convertê-la para o formato base64 que, no momento da renderização, é convertido na imagem.
+->Ajustar Icones .
+->Mudar o formulário para usar o Form do AngularJS
+-> REMOVER Imagem.
+-> Editar (nome e descrição).
+-> Cropar a imagem e salvar (update).

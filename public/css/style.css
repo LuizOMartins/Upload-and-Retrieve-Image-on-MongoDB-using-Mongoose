@@ -1,0 +1,12 @@
+#content-img {
+    text-align: center;
+    width: 350px;
+    margin: 10px;
+    min-height: 205px;
+    position: relative;
+}
+
+#content-img img {
+    margin: 0 auto !important;
+    border-style: solid;
+}

@@ -43,13 +43,12 @@ app.get('/image', (req, res) => {
             res.sendStatus(500);
             console.log('ERROR GET',err); 
         } 
-        else { 
-            // res.render('app', { items: items }); 
+        else {
             console.log("200 OK");
             res.json(items);
 
         } 
-    }).limit(1); 
+    }); 
 }); 
 
 

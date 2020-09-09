@@ -1,0 +1,23 @@
+<div> 
+    <form action="/image" method="POST" enctype="multipart/form-data"> 
+        <div> 
+            <label for="name">Titulo da Imagem</label> 
+            <input type="text" id="name" placeholder="Name" 
+                   value="" name="name" required> 
+        </div> 
+        <div> 
+            <label for="desc">Descrição da Imagem</label> 
+            <textarea id="desc" name="pesc" value="" rows="2" 
+                      placeholder="Descrição" required> 
+            </textarea> 
+        </div> 
+        <div> 
+            <label for="image">Upload Image</label> 
+            <input type="file" id="image" 
+                   name="image" value="" required> 
+        </div> 
+        <div> 
+            <button type="submit">Enviar</button> 
+        </div> 
+    </form> 
+</div> 
