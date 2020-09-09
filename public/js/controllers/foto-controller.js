@@ -30,6 +30,7 @@ angular.module('image')
 				})
 				.catch(function(erro) {
 					$scope.mensagem = erro.mensagem;
+					console.log(erro);
 				});
 			// }
         };

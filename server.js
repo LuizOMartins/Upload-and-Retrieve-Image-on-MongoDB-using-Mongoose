@@ -1,7 +1,7 @@
 var http = require('http');
 var app = require('./config/express');
-require('dotenv').config();
-require('./config/database')('mongodb://localhost:'+process.env.PORT+'/'+process.env.DB);
+require('./config/database')('mongodb://localhost:27017/image');
+
 
 http.createServer(app)
 .listen(3000, function() {

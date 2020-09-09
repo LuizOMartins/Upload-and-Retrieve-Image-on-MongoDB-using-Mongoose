@@ -7,7 +7,7 @@ angular.module('image')
 			$http.get('/image')
 			.success(function(response) {
 				$scope.imagens = response;
-
+				console.log(response);
 				$scope.imagens.forEach(element => {
 					element.img.data = arrayBufferToBase64(element.img.data.data);
 				});

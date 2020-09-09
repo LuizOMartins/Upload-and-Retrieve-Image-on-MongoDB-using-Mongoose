@@ -18,9 +18,6 @@ var corsOptions = {
 
   app.use(cors(corsOptions));
   
-// Set EJS as templating engine  
-// app.set("view engine", "ejs"); 
-
 
 // consign({cwd: 'app'})
 //     .include('models')
