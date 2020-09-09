@@ -2,11 +2,8 @@
 
 ## Dependências:
 
-* Dotenv é um módulo de dependência zero que carrega variáveis ​​de ambiente de um arquivo .env em process.env.
-npm install dotenv --save
 
 * Mean STACK:  MongoDB, Express, AngularJS e Node.
-
 * Multer:
 
 ### Informações:
@@ -23,6 +20,7 @@ Para fazer:
 -- pagina inicial   #
 ->Ajustar Icones #
 
+**Explicação Projeto
 -> Organizar Rotas para padrão do Projeto.
 ->Mudar o formulário para usar o Form do AngularJS.
 -> REMOVER Imagem.
