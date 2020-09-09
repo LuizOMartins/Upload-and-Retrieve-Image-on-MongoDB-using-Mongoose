@@ -56,8 +56,13 @@ app.get('/image', (req, res) => {
 app.post('/image', upload.single('image'), (req, res, next) => {
   
     console.log('POST');
+    console.log('BODY',req.body);
+    console.log("desc", req.body.desc );
+    console.log("IMG", req.body.img );
+    console.log("TYPE", req.body.img );
+
     var obj = { 
-        name: req.body.name, 
+        name: req.body.nome, 
         desc: req.body.desc, 
         img: { 
             data: fs.readFileSync(path.join('C:/Users/luyz_/Documents/GitHub/IMAGE/uploads/' + req.file.filename)),    

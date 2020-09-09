@@ -1,15 +1,12 @@
 <hr> 
-<button ng-click="getImages()">REQ</button>
+<button ng-click="getImages()" class="btn btn-outline-inverse btn-lg item-btn">Fetch images</button>
 <hr>
 <div ng-repeat="foto in imagens" >
 
-
-
     <div id="content-img" class="col-md-4 col-lg-4"> 
-        <img src="data:image/png;base64,{{foto.img.data}}" alt="{{foto.name}}" class="img-responsive" alt="Responsive image" />
+        <p class="help-block">{{foto.name}}</p>
+        <img src="data:image/png;base64,{{foto.img.data}}" alt="{{foto.name}}" class="img-responsive" />
     </div>
     
-    
-        
-        
 </div>
+

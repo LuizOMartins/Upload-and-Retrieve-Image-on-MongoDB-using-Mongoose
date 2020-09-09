@@ -21,9 +21,11 @@ Para fazer:
 - Separar as rotas:
 -- cadastrar imagem #
 -- pagina inicial   #
+->Ajustar Icones #
 
-->Ajustar Icones .
-->Mudar o formulário para usar o Form do AngularJS
+
+->Mudar o formulário para usar o Form do AngularJS.
 -> REMOVER Imagem.
 -> Editar (nome e descrição).
+-> Lazy Loading:  no carregamento das imagnes.
 -> Cropar a imagem e salvar (update).

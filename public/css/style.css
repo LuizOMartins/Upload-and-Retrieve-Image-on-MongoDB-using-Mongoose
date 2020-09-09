@@ -10,3 +10,20 @@
     margin: 0 auto !important;
     border-style: solid;
 }
+
+
+.item-btn {
+    padding: 6px 8px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+
+    color: #563d7c;
+    background-color: transparent;
+    border-color: #563d7c;
+}
+.item-btn:hover{  
+    color: #fff;
+    background-color: #563d7c;
+    border-color: #563d7c;
+}
