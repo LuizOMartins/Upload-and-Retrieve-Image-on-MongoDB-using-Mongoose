@@ -1,6 +1,48 @@
 <div ng-controller="FotoController" >
 
-
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <form novalidate name="formulario" class="row" ng-submit="submit()" >
+                <!-- ng-submit="submeter()" -->
+                <div class="col-md-12">
+                    <!-- Nome -->
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input name="nome" class="form-control" ng-model="foto.nome"  type="text" id="name" placeholder="Nome" required>  
+                    </div>
+                    <!-- FIM Nome -->   
+                    <!-- Descrição -->
+                    <div class="form-group">
+                        <label for="desc">Descrição</label>
+                        <input name="desc" class="form-control" ng-model="foto.desc" placeholder="Descrição"  required>
+                    </div>
+                    <!-- FIM DESCRIÇÃO -->
+                    <!-- FILE -->
+    
+                    <div class="form-group"> 
+                        <label for="image">Upload Image</label> 
+                        <!-- <input type="file"  id="image" name="image" ng-model="foto.img" required>  -->
+                        <input type="file" name="image" id="imageform"/><br><br>
+                        
+                    </div> 
+    
+                    <!-- FIM FILE -->
+                    <!-- <button type="submit" class="btn btn-primary" >Salvar</button> -->
+                    <button class="btn btn-primary">Salvar</button>
+                    <a href="/#/home" class="btn btn-primary">Voltar</a>
+                    <hr>
+                </div>
+                <!-- <div class="col-md-6">
+                    <img src="foto.img" alt="">
+                </div> -->
+            </form>
+        </div>
+    
+        <p>{{item.nome}}</p>
+        <img ng-src="http://localhost:3000/images/{{item.img}}" alt="{{item.nome}}">
+        <p>{{item.desc}}</p>
+    </div>
+<hr>
     <div class="col-lg-6 col-md-6 ">
         <form novalidate name="formulario" class="row" >
             <!-- ng-submit="submeter()" -->
@@ -62,4 +104,6 @@
             </form> 
         </div> 
     </div>
+ 
+
 </div>

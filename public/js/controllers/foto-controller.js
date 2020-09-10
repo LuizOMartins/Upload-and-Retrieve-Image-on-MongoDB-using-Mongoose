@@ -4,36 +4,36 @@ angular.module('image')
 		$scope.foto = {};
         $scope.mensagem = '';
         
-		$scope.submeter = function() {
-			console.log('SUBMETEU');
+		// $scope.submeter = function() {
+		// 	console.log('SUBMETEU');
 
-			var file = document.getElementById('image').files[0];
-			console.log("FILE",file);
-			readerFile = new FileReader();
+		// 	var file = document.getElementById('image').files[0];
+		// 	console.log("FILE",file);
+		// 	readerFile = new FileReader();
 
-			readerFile.onloadend = function(e) {
-			var data = e.target.result;
-			console.log("DATA", data);
+		// 	readerFile.onloadend = function(e) {
+		// 	var data = e.target.result;
+		// 	console.log("DATA", data);
 			
-			//send your binary data via $http or $resource or do anything else with it
-			}
+		// 	//send your binary data via $http or $resource or do anything else with it
+		// 	}
 
 			
-			$scope.foto.img = file;
-			// $scope.foto.img = r;
+		// 	$scope.foto.img = file;
+		// 	// $scope.foto.img = r;
 
-			// if ($scope.formulario.$valid) {
-				$http.post('/image', $scope.foto)
-				.then(function(dados) {
-					$scope.mensagem = dados.mensagem;
-					if (dados.inclusao) $scope.foto = {};
-				})
-				.catch(function(erro) {
-					$scope.mensagem = erro.mensagem;
-					console.log(erro);
-				});
-			// }
-        };
+		// 	// if ($scope.formulario.$valid) {
+		// 		$http.post('/image', $scope.foto)
+		// 		.then(function(dados) {
+		// 			$scope.mensagem = dados.mensagem;
+		// 			if (dados.inclusao) $scope.foto = {};
+		// 		})
+		// 		.catch(function(erro) {
+		// 			$scope.mensagem = erro.mensagem;
+		// 			console.log(erro);
+		// 		});
+		// 	// }
+        // };
         
 		$scope.uploadFile = function(){
 
@@ -62,6 +62,30 @@ angular.module('image')
 		};
 
 
+		$scope.submit =  function(){
+			var formData =  new FormData();
+			for (key in $scope.foto){
+				console.log(key, '....');
+
+				formData.append(key, $scope.foto[key]);
+			}
+
+			var file  =  $('#imageform')[0].files[0];
+			formData.append('image',file);
+			
+			console.log("FILE",file);
+
+			$http.post("/image", formData, {
+				transformRequest: angular.identity,
+				headers: {'Content-Type': undefined}
+			}).then(function(res){
+				console.log("RESPONSE", res);
+				console.log('RES DATA', res.data)
+				$scope.item =  res.data;
+
+			});
+
+		}
 
 
 	});
