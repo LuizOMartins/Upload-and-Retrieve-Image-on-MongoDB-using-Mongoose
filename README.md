@@ -20,9 +20,9 @@ Para fazer:
 -- pagina inicial   #
 ->Ajustar Icones #
 
+->Mudar o formulário para usar o Form do AngularJS.
 **Explicação Projeto
 -> Organizar Rotas para padrão do Projeto.
-->Mudar o formulário para usar o Form do AngularJS.
 -> REMOVER Imagem.
 -> Editar (nome e descrição).
 -> Lazy Loading:  no carregamento das imagnes.
