@@ -35,7 +35,31 @@ angular.module('image')
 			// }
         };
         
+		$scope.uploadFile = function(){
 
+			var file = $scope.myFile;
+			var uploadUrl = "/image";
+			var Form = new FormData();
+			console.log("nome",$scope.foto.nome)
+			Form.append('nome', $scope.foto.nome );
+			Form.append('desc', $scope.foto.desc );
+
+			var img = new Image();  
+			img  = file;
+
+			Form.append('img', file);
+			console.log("FORMULARIO",Form);
+			$http.post(uploadUrl, Form, {
+				transformRequest: angular.identity,
+				headers: {'Content-Type': undefined}
+			})
+			.success(function(){
+			  console.log("success!!");
+			})
+			.error(function(error){
+			  console.log("error!!", error);
+			});
+		};
 
 
 

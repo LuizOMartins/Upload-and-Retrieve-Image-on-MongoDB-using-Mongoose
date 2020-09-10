@@ -2,7 +2,8 @@
 
 
     <div class="col-lg-6 col-md-6 ">
-        <form novalidate name="formulario" class="row" ng-submit="submeter()" enctype="multipart/form-data">
+        <form novalidate name="formulario" class="row" >
+            <!-- ng-submit="submeter()" -->
             <div class="col-md-6">
                 <!-- Nome -->
                 <div class="form-group">
@@ -20,13 +21,14 @@
 
                 <div class="form-group"> 
                     <label for="image">Upload Image</label> 
-                    <input type="file"  id="image" name="image" ng-model="foto.img" required> 
+                    <!-- <input type="file"  id="image" name="image" ng-model="foto.img" required>  -->
+                    <input type="file" name="image" file-model="myFile"/><br><br>
+                    
                 </div> 
 
                 <!-- FIM FILE -->
-                <button type="submit" class="btn btn-primary" >
-                    Salvar
-                </button>
+                <!-- <button type="submit" class="btn btn-primary" >Salvar</button> -->
+                <button ng-click="uploadFile()"   class="btn btn-primary">Salvar</button>
                 <a href="/#/home" class="btn btn-primary">Voltar</a>
                 <hr>
             </div>

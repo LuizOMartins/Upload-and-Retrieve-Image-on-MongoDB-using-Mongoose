@@ -43,6 +43,8 @@ app.get('/image', (req, res) => {
 // Uploading the image 
 app.post('/image', upload.single('image'), (req, res, next) => {
   
+
+    console.log("TIPO",req.contentType);
     console.log('POST');
     console.log('BODY',req.body);
     console.log("desc", req.body.desc );
@@ -64,6 +66,8 @@ app.post('/image', upload.single('image'), (req, res, next) => {
         // } 
 
     } 
+
+    console.log();
     imgModel.create(obj, (err, item) => { 
         console.log('criando imagems');
         if (err) { 
