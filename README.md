@@ -18,7 +18,8 @@
     [x] Ajustar Icones
     [x] Editar (nome e descrição).
     [x] Mudar o formulário para usar o Form do AngularJS.
-    [ ] Explicação Projeto
+    [ ] Explicação Projeto.
+    [ ] Diferença entre salvar imagem no banco e usar um diretório.
     [ ] Mensagem de erro default para imagem não encontrada.
     [ ] Organizar Rotas para padrão do Projeto.
     [ ] REMOVER Imagem.
