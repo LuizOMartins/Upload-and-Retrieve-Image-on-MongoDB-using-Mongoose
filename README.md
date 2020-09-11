@@ -20,6 +20,7 @@
     [x] Editar (nome e descrição).
     [x] Mudar o formulário para usar o Form do AngularJS.
     [ ] Ajustar Time Zone nome Image.
+    [ ] Date Java Scritp para o nome e com Time Zone Correto.
     [ ] Explicação Projeto.
     [ ] Diferença entre salvar imagem no banco e usar um diretório.
     [ ] Mensagem de erro default para imagem não encontrada.
