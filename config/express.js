@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 var fs = require('fs'); 
 var path = require('path'); 
 app.use(express.static('./public'));
-const crypto =  require('crypto');
  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -27,13 +26,14 @@ var multer = require('multer');
 var  upload = multer({
     dest:'uploads/',
     limits: {
-        fileSize: 2*1024 + 1024
+        fileSize: 2*1024 * 1024,
     },
     fileFilter: (req,file,cb) =>{
         const allowedMimes = [
                 'image/jpeg',
                 'image/pjpeg',
                 'image/png',
+                'image/jpg',
                 'image/gif'
         ];
         if(allowedMimes.includes(file.mimetype)){
@@ -65,8 +65,9 @@ app.get('/image', (req, res) => {
 app.post('/image', upload.any(), function (req, res, next) {
     if(req.files){
         req.files.forEach(function(file){
-            console.log(file);
-            var filename = (new Date).valueOf()+'-'+file.originalname;
+            let stringRandom= Math.random().toString(36).substring(7);
+            var filename = (new Date).valueOf()+'-'+stringRandom+'-'+file.originalname;
+            // var filename = (new Date).valueOf()+'-'+stringHash+'-'+file.originalname;
             fs.rename(file.path, 'public/images/'+filename, function(err){
                 if(err) throw err;
                 console.log("FILE UPLOUD");

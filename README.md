@@ -3,6 +3,7 @@
 
 * Mean STACK:  MongoDB, Express, AngularJS e Node.
 * Multer:
+* Nodemon
 
 ### Informações:
 - Armazenamento de Imagem atual: 
@@ -18,6 +19,7 @@
     [x] Ajustar Icones
     [x] Editar (nome e descrição).
     [x] Mudar o formulário para usar o Form do AngularJS.
+    [ ] Ajustar Time Zone nome Image.
     [ ] Explicação Projeto.
     [ ] Diferença entre salvar imagem no banco e usar um diretório.
     [ ] Mensagem de erro default para imagem não encontrada.
