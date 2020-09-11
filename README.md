@@ -28,7 +28,7 @@
     [ ] Cropar a imagem e salvar (update).
 
     - Se a imagem for apagada do diretorio ela nao sera exibida e tera uma mensagem de erro.
-### Instalação
+#### Instalação
 
  [Node.js](https://nodejs.org/) v4+ to run.
 
@@ -39,5 +39,45 @@ $ npm install
 $ node start
 ```
 
-#### Referência: 
+
+##### Explicação do Projeto:
+
+- FormData(): criar um Objeto JS que "simula" um <form>
+- Armazenamento de Image:
+    - 
+- Base64:
+- Buffer:
+- Blob: [x]
+- Multer:
+- Validação Formulário:
+- Uint8Array():
+
+###### Referência: 
 - https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
+    - tutorial Uploud image usando NodeJS
+- https://youtu.be/MkkbUfcZUZM
+    -- link referencia envio de arquivos estatico para CDN
+- 
+    -- Uploud Imagem usando AngulasJS
+
+
+- Exemplo BLOB:
+
+CREATE TABLE COMPROMISSOS (
+  ID         INTEGER NOT NULL,
+  DESCRICAO  BLOB,
+  DATA_HORA  TIMESTAMP NOT NULL
+);
+--  blob (Binary Large Object - grande objeto binário) é um campo criado para o armazenamento de qualquer tipo de informações em formato binário, dentro de uma tabela de um banco de dados.
+
+
+-> Salvar arquivos e imagens em banco de dados não é recomendado,  ou salvar no Servidor da aplicação, isso acaba ocupando muito espaço, no melhor caso seria utilizar uma solução como: 
+-   CDN: Content Delivery Network (Amazon S2/S3) para salvar os arquivos em locais estaticos.
+-   Os CDN são preparados para salvar os arquivos de forma estatica.
+-  Melhor também para ter uma arquitetura mais distribuida.
+
+Exmplicação Encode Form HTML: Ao fazer uma solicitação POST, você deve codificar os dados que formam o corpo da solicitação de alguma forma.
+- Os formulários HTML fornecem três métodos de codificação.
+    - application/x-www-form-urlencoded (o padrão)
+    - multipart/form-data
+    - text/plain

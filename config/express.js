@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var fs = require('fs'); 
 var path = require('path'); 
 app.use(express.static('./public'));
+const crypto =  require('crypto');
  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -23,7 +24,26 @@ app.use(function (req, res, next){
 
 
 var multer = require('multer');
-var  upload = multer({dest:'uploads/'});
+var  upload = multer({
+    dest:'uploads/',
+    limits: {
+        fileSize: 2*1024 + 1024
+    },
+    fileFilter: (req,file,cb) =>{
+        const allowedMimes = [
+                'image/jpeg',
+                'image/pjpeg',
+                'image/png',
+                'image/gif'
+        ];
+        if(allowedMimes.includes(file.mimetype)){
+            cb(null,true);
+        }else{
+            cb(new Error('Invalido file Type.'));
+        }
+    }
+
+});
 var imgModel = require('../app/models/image'); 
 
 // Retriving the image 
