@@ -6,7 +6,7 @@ angular.module('image')
 		$scope.item = {};
 		$scope.item.name =  $scope.foto.nome;
 		$scope.item.desc =  $scope.foto.desc;
-		
+
 		$scope.submit =  function(){
 			var formData =  new FormData();
 			for (key in $scope.foto){
@@ -19,8 +19,6 @@ angular.module('image')
 				transformRequest: angular.identity,
 				headers: {'Content-Type': undefined}
 			}).then(function(res){
-				console.log("RESPONSE", res);
-				console.log('RES DATA', res.data)
 				$scope.item =  res.data;
 
 			});
