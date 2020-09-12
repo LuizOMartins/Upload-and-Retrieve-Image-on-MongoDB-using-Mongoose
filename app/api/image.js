@@ -17,8 +17,6 @@ module.exports = function(app) {
 
 	};
 
-
-
         // Uploading the image 
         api.adiciona = function(req, res, next) {
             console.log('aqui');
@@ -47,9 +45,7 @@ module.exports = function(app) {
                     });
         
                 });
-            }
-
-            
+            }  
         };
 
     return api;

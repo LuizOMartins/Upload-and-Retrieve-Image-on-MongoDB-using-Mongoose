@@ -22,21 +22,19 @@
 - [x] cadastrar imagem
 - [x] pagina inicial
 - [x] Ajustar Icones
-- [x] Editar (nome e descrição).
 - [x] Mudar o formulário para usar o Form do AngularJS.
 - [x] Validação Formulário.
 - [x] Mensagem de erro default para imagem não encontrada.
     - src="http://localhost:3000/images/error.png" 
 - [x] Inserir Font Aewsone
 - [x] Utilizar o Consign
-- [ ] Organizar Rotas para padrão do Projeto.
-- [ ] Explicação Projeto.
-- [ ] Diferença entre salvar imagem no banco e usar um diretório.
-- [ ] REMOVER Imagem.
+- [x] Organizar Rotas para padrão do Projeto.
+- [x] Alterar para pagina inicial ja mostrar as imagens quando abrir a pagina
+- [ ] Delete Imagem.
 - [ ] Editar Imagem.
-- [ ] Lazy Loading: no carregamento das imagnes.
-- [ ] Cropar a imagem e salvar (update).
-- Se a imagem for apagada do diretorio ela nao sera exibida e tera uma mensagem de erro.
+- [ ] Criar JOB para apagar as imagens não usadas.
+    - Com base no campo nome da colletion apagar as imagens do Diretorio.
+- [ ] Explicação Projeto.
 
 #### Instalação
 

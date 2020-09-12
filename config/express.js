@@ -2,7 +2,6 @@ var express = require('express');
 var consign = require('consign');
 var bodyParser = require('body-parser'); 
 var path = require('path');
-var mongoose = require('mongoose');
 var app = express();
 
 app.use(express.static('./public'));
