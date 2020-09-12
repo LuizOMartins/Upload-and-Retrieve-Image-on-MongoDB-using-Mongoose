@@ -52,7 +52,7 @@ app.get('/image', (req, res) => {
         console.log('BUSCANDO...');
         if (err) { 
             res.sendStatus(500);
-            console.log('ERROR GET',err); 
+            console.log(err); 
         } 
         else {
             console.log("200 OK");

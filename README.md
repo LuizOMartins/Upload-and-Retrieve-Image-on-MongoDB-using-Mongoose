@@ -3,8 +3,9 @@
 ## Dependências e tecnologias usadas:
 
 * Mean STACK: MongoDB, Express, AngularJS e Node.
-* Multer:
-* Nodemon
+* Multer:  Multer é um middleware node.js para manipulação multipart/form-data, que é usado principalmente para upload de arquivos. 
+    -  O Multer não processará nenhum formulário que não seja multiparte ( multipart/form-data).
+* Nodemon: ferramenta que ajuda a desenvolver aplicativos baseados em node.js reiniciando automaticamente o aplicativo de nó quando mudanças de arquivo no diretório são detectadas.
 
 ### Informações:
 - **Armazenamento de Imagem**:
@@ -23,7 +24,7 @@
 - [x] Ajustar Icones
 - [x] Editar (nome e descrição).
 - [x] Mudar o formulário para usar o Form do AngularJS.
-- [ ] Validação Formulário:
+- [x] Validação Formulário.
 - [ ] Mensagem de erro default para imagem não encontrada.
 - [ ] Organizar Rotas para padrão do Projeto.
 - [ ] Explicação Projeto.
