@@ -4,4 +4,9 @@
 node_modules/
 .dpl/
 
-public/images/*
+
+public/images/*.jpeg
+public/images/*.pjpeg
+public/images/*.png
+public/images/*.jpg
+public/images/*.gif
