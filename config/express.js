@@ -1,8 +1,12 @@
 var express = require('express');
-var app = express();
+var consign = require('consign');
 var bodyParser = require('body-parser'); 
+var path = require('path');
+var mongoose = require('mongoose');
 var fs = require('fs'); 
-var path = require('path'); 
+
+var app = express();
+
 app.use(express.static('./public'));
  
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,11 +19,11 @@ app.use(function (req, res, next){
     next();
 });
 
-// consign({cwd: 'app'})
-//     .include('models')
-//     .then('api')
-//     .then('routes')
-//     .into(app);
+consign({cwd: 'app'})
+    .include('models')
+    .then('api')
+    .then('routes')
+    .into(app);
 
 
 var multer = require('multer');
@@ -44,11 +48,12 @@ var  upload = multer({
     }
 
 });
-var imgModel = require('../app/models/image'); 
 
+// var imgModel = require('../app/models/image'); 
+var modelImg = mongoose.model('imagens');
 // Retriving the image 
 app.get('/image', (req, res) => { 
-    imgModel.find({}, (err, items) => { 
+    modelImg.find({}, (err, items) => { 
         console.log('BUSCANDO...');
         if (err) { 
             res.sendStatus(500);
@@ -72,7 +77,7 @@ app.post('/image', upload.any(), function (req, res, next) {
                 if(err) throw err;
                 console.log("FILE UPLOUD");
 
-                var image = new imgModel({
+                var image = new modelImg({
                     name: req.body.nome,
                     desc: req.body.desc,
                     img: filename

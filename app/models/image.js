@@ -1,4 +1,4 @@
-var mongoose = require('mongoose') ;
+var mongoose = require('mongoose');
 
 var imageSchema = new mongoose.Schema({ 
     name: { type: String}, 
@@ -6,4 +6,4 @@ var imageSchema = new mongoose.Schema({
     img:  String
 }); 
 
-module.exports = new mongoose.model('imagens', imageSchema); 
+mongoose.model('imagens', imageSchema); 

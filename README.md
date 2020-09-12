@@ -27,7 +27,8 @@
 - [x] Validação Formulário.
 - [x] Mensagem de erro default para imagem não encontrada.
     - src="http://localhost:3000/images/error.png" 
-- [ ] Inserir Font Aewsone
+- [x] Inserir Font Aewsone
+- [x] Utilizar o Consign
 - [ ] Organizar Rotas para padrão do Projeto.
 - [ ] Explicação Projeto.
 - [ ] Diferença entre salvar imagem no banco e usar um diretório.
