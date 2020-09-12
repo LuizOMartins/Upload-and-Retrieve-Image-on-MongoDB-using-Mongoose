@@ -25,7 +25,9 @@
 - [x] Editar (nome e descrição).
 - [x] Mudar o formulário para usar o Form do AngularJS.
 - [x] Validação Formulário.
-- [ ] Mensagem de erro default para imagem não encontrada.
+- [x] Mensagem de erro default para imagem não encontrada.
+    - src="http://localhost:3000/images/error.png" 
+- [ ] Inserir Font Aewsone
 - [ ] Organizar Rotas para padrão do Projeto.
 - [ ] Explicação Projeto.
 - [ ] Diferença entre salvar imagem no banco e usar um diretório.
