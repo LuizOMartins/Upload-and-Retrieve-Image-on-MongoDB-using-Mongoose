@@ -37,6 +37,7 @@
 * **Alterações Recomendadas:**
 - [ ] Criar JOB para apagar as imagens não usadas.
     - Com base no campo nome da colletion apagar as imagens do Diretorio.
+- [ ] Limpar formulário quando inserir a imagem.
 #### Instalação
 
 [Node.js](https://nodejs.org/) v4+ to run.
