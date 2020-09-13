@@ -30,7 +30,7 @@
 - [x] Utilizar o Consign
 - [x] Organizar Rotas para padrão do Projeto.
 - [x] Alterar para pagina inicial ja mostrar as imagens quando abrir a pagina
-- [ ] Delete Imagem.
+- [x] Delete Imagem.
 - [ ] Editar Imagem.
 - [ ] Criar JOB para apagar as imagens não usadas.
     - Com base no campo nome da colletion apagar as imagens do Diretorio.

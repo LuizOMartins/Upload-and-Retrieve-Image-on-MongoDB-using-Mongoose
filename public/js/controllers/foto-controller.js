@@ -7,7 +7,7 @@ angular.module('image')
 		$scope.item.name =  $scope.foto.nome;
 		$scope.item.desc =  $scope.foto.desc;
 
-		
+
 
 		$scope.submit =  function(){
 			var formData =  new FormData();

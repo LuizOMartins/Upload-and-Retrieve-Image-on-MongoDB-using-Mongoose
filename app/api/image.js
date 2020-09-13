@@ -15,13 +15,24 @@ module.exports = function(app) {
 			res.sendStatus(500);
 		});
 
+    };
+    
+    api.removePorId = function(req, res) {
+        modelImg.remove({'_id' : req.params.id})
+		.then(function() {
+			res.sendStatus(200);
+		}, function(error) {
+			console.log(error);
+			res.sendStatus(500);
+		});
+
 	};
+
 
         // Uploading the image 
         api.adiciona = function(req, res, next) {
             console.log('aqui');
             if(req.files){
-                console.log('DENTRO IF')
                 req.files.forEach(function(file){
                     let stringRandom= Math.random().toString(36).substring(7);
                     var filename = (new Date).valueOf()+'-'+stringRandom+'-'+file.originalname;
