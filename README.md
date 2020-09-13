@@ -32,10 +32,11 @@
 - [x] Alterar para pagina inicial ja mostrar as imagens quando abrir a pagina
 - [x] Delete Imagem.
 - [ ] Editar Imagem.
-- [ ] Criar JOB para apagar as imagens não usadas.
-    - Com base no campo nome da colletion apagar as imagens do Diretorio.
 - [ ] Explicação Projeto.
 
+* **Alterações Recomendadas:**
+- [ ] Criar JOB para apagar as imagens não usadas.
+    - Com base no campo nome da colletion apagar as imagens do Diretorio.
 #### Instalação
 
 [Node.js](https://nodejs.org/) v4+ to run.

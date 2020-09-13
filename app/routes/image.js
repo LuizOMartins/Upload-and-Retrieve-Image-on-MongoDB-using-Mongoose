@@ -30,7 +30,7 @@ var  upload = multer({
 		.post(upload.any(), api.adiciona);
 
 	app.route('/image/:id')
-		// .get(api.buscaPorId)
+		.get(api.buscaPorId)
 		.delete(api.removePorId);
 		// .put(api.atualiza);
 };

@@ -8,10 +8,10 @@
     <div id="content-img" class="col-md-3 col-lg-3" > 
         <p class="help-block">{{foto.name}}</p>
         <!-- <img src="data:image/png;base64,{{foto.img.data}}" alt="{{foto.name}}" class="img-responsive" /> -->
-        <img ng-src="http://localhost:3000/images/{{foto.img}}" alt="{{item.nome}}" class="img-responsive" onError="this.onerror=null;this.src='http://localhost:3000/images/error.png';">
-       
+        <img ng-src="http://localhost:3000/images/{{foto.img}}" alt="{{foto.name}}" class="img-responsive" onError="this.onerror=null;this.src='http://localhost:3000/images/error.png';">
         <p class="help-block">{{foto.desc}}</p>
+        <a class="btn btn-primary btn-block" href="/#/new/{{foto._id}}">Editar</a>
         <button class="btn btn-danger btn-block" ng-click="remover(foto)" >Remover</button>
     </div>
-
+    
 </div>

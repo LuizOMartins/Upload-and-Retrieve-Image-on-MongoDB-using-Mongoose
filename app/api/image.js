@@ -16,6 +16,18 @@ module.exports = function(app) {
 		});
 
     };
+
+    api.buscaPorId = function(req, res) {
+
+		modelImg.findById(req.params.id)
+		.then(function(foto) {
+			if (!foto) throw new Error('Foto não encontrada');
+			res.json(foto);
+		}, function(error) {
+			console.log(error);
+			res.sendStatus(500);
+		});
+	};
     
     api.removePorId = function(req, res) {
         modelImg.remove({'_id' : req.params.id})

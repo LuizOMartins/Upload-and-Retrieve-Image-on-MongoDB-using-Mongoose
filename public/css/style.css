@@ -27,3 +27,17 @@
     background-color: #563d7c;
     border-color: #563d7c;
 }
+
+#content-preview-img{
+    padding-top:  40px;
+    text-align: center;
+}
+
+#content-preview-img img{
+    margin: 0 auto;
+}
+
+form {
+    margin-top:  40px;
+
+}

@@ -44,9 +44,12 @@
             </form>
         </div>
         <div class="col-lg-6 col-md-6">
+            <div id="content-preview-img">
                 <p>{{foto.nome}}</p>
-                <img  class="img-responsive" ng-src="http://localhost:3000/images/{{item.img}}" alt="{{item.nome}}">
+                <img  id="image-foto" class="img-responsive" ng-src="http://localhost:3000/images/{{item.img}}" alt="{{item.nome}}">
                 <p>{{foto.desc}}</p>
+            </div>
+                
         </div>
     
     </div>

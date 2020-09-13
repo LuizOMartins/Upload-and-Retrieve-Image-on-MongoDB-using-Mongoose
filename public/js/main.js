@@ -11,6 +11,10 @@ angular.module('image', ['ngAnimate', 'ngRoute', 'ngResource'])
 			controller: 'ImageController'
 		});
 
+		$routeProvider.when('/new/:fotoId', {
+			templateUrl: 'partials/foto.html',
+			controller: 'ImageController'
+		});
 
 		$routeProvider.otherwise({redirectTo: '/home'});
 
